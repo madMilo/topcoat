@@ -12,12 +12,22 @@ CSS for clean and fast web apps
 
 * Open `demo/index.html` to view the usage guides.
 * Copy your desired theme CSS from the `css/` folder into your project
+* For the upcoming modular build, copy from `dist/`:
+  * `dist/tokens.css` (design tokens)
+  * `dist/base.css` (base element styles)
+  * `dist/components.css` (component styles)
+  * `dist/utilities.css` (utility classes)
+  * `dist/topcoat-2026.css` (assembled bundle)
 * Copy the `img/` and `font/` folders into your project ( Feel free to only
   copy the images and font weights you intend to use )
 * Link the CSS into your page
 
 ```css
 <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.min.css">
+```
+
+```css
+<link rel="stylesheet" type="text/css" href="dist/topcoat-2026.min.css">
 ```
 
 _*Alternatively incorporate the css into your build process if you are so
@@ -74,7 +84,7 @@ _*comes packaged with node._
 _*Topcoat uses Grunt 0.4.0. You might want to [read](http://gruntjs.com/getting-started) more on their website if you haven't upgraded since a lot has changed._
 
 * Type `grunt` in the command line to build the css.
-* The results will be built into the release folder.
+* The results will be built into the `css/` (legacy themes) and `dist/` (modular 2026 entrypoints) folders.
 * Alternatively type `grunt watch` to have the build run automatically when you make changes to
 source files.
 
@@ -99,4 +109,3 @@ See [Release Notes](https://github.com/topcoat/topcoat/releases/).
 ## License
 
 [Apache license](https://raw.github.com/topcoat/topcoat/master/LICENSE)
-

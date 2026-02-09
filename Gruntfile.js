@@ -140,6 +140,16 @@ module.exports = function(grunt) {
                 src: ['*.css', '!*.min.css'],
                 dest: 'css',
                 ext: '.min.css'
+            },
+            dist: {
+                options: {
+                    sourceMap: true
+                },
+                expand: true,
+                cwd: 'dist',
+                src: ['*.css', '!*.min.css'],
+                dest: 'dist',
+                ext: '.min.css'
             }
         },
 
@@ -159,7 +169,7 @@ module.exports = function(grunt) {
         },
 
         clean: {
-            release: ['css']
+            release: ['css', 'dist']
         },
 
         copy: {
@@ -249,9 +259,41 @@ module.exports = function(grunt) {
     grunt.loadTasks('dev/tasks');
 
     // Default task.
-    grunt.registerTask('default', ['clean', 'stylus', 'autoprefixer', 'cssmin', 'topdoc', 'copy:release']);
+    grunt.registerTask('default', ['clean', 'stylus', 'autoprefixer', 'cssmin', 'dist', 'cssmin:dist', 'topdoc', 'copy:release']);
     grunt.registerTask('release', ['default', 'clean:src']);
     grunt.registerTask('compile', ['topcoat:compile', 'topdoc', 'copy:release']);
+    grunt.registerTask('dist', 'Builds dist entrypoint CSS files.', function() {
+        var distDir = 'dist';
+        var stripImports = function(css) {
+            return css.split('\n').filter(function(line) {
+                return !line.match(/^\s*@import/);
+            }).join('\n').trim();
+        };
+        var tokensEntry = stripImports(grunt.file.read('src/tokens/index.css'));
+        var tokensCss = [
+            grunt.file.read('src/tokens/foundation.css'),
+            grunt.file.read('src/tokens/semantic.light.css'),
+            grunt.file.read('src/tokens/semantic.dark.css'),
+            tokensEntry
+        ].join('\n\n');
+        var baseCss = grunt.file.read('src/base/index.css');
+        var componentsCss = grunt.file.read('src/components/index.css');
+        var utilitiesCss = grunt.file.read('src/utilities/index.css');
+        var topcoatCss = [
+            grunt.file.read('src/topcoat-2026.css'),
+            tokensCss,
+            baseCss,
+            componentsCss,
+            utilitiesCss
+        ].join('\n\n');
+
+        grunt.file.mkdir(distDir);
+        grunt.file.write(path.join(distDir, 'tokens.css'), tokensCss + '\n');
+        grunt.file.write(path.join(distDir, 'base.css'), baseCss + '\n');
+        grunt.file.write(path.join(distDir, 'components.css'), componentsCss + '\n');
+        grunt.file.write(path.join(distDir, 'utilities.css'), utilitiesCss + '\n');
+        grunt.file.write(path.join(distDir, 'topcoat-2026.css'), topcoatCss + '\n');
+    });
 
     grunt.registerTask('telemetry', '', function(platform, theme) {
         if (chromiumSrc === "") grunt.fail.warn("Set CHROMIUM_SRC to point to the correct location\n");
