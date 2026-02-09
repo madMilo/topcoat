@@ -39,6 +39,27 @@ All new utilities use the `.tc-u-*` prefix to avoid collisions and signal their 
 2. **Introduce utilities gradually** by adding `.tc-u-*` classes where needed.
 3. **Avoid renaming components** until/if a dedicated component namespace is added in the future.
 
+## Validation (no `.topcoat-*` allowed)
+
+There is **no compatibility layer** for `.topcoat-*` going forward, so any usage should be treated as an error.
+
+**Local check (run before committing):**
+
+```sh
+rg --line-number "\\.topcoat-" src/ demo/ css/
+```
+
+Expected failure message when matches are found:
+
+```
+Found legacy .topcoat- usage. Remove or replace with .tc-u-*.
+```
+
+**CI check (required):**
+
+- Run the same `rg` command in CI against `src/`, `demo/`, and compiled CSS (e.g., `css/`).
+- Fail the job if any match is returned with the message above, so regressions are blocked early.
+
 ## Rationale
 
 - **Backward compatibility**: no breaking changes for existing users.
