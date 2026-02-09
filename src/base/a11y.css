@@ -1,0 +1,64 @@
+@layer base {
+  :root {
+    --a11y-focus-ring-color: var(--color-accent, #2563eb);
+    --a11y-focus-ring-width: 2px;
+    --a11y-focus-ring-offset: 2px;
+    --a11y-disabled-opacity: 0.5;
+  }
+
+  :where(:focus-visible) {
+    outline: var(--a11y-focus-ring-width) solid var(--a11y-focus-ring-color);
+    outline-offset: var(--a11y-focus-ring-offset);
+  }
+
+  :where(:focus:not(:focus-visible)) {
+    outline: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  :where([aria-expanded]) {
+    --a11y-expanded: 0;
+  }
+
+  :where([aria-expanded="true"]) {
+    --a11y-expanded: 1;
+  }
+
+  :where([aria-selected]) {
+    --a11y-selected: 0;
+  }
+
+  :where([aria-selected="true"]) {
+    --a11y-selected: 1;
+  }
+
+  :where([aria-current]) {
+    --a11y-current: 1;
+    color: var(--color-accent, currentColor);
+  }
+
+  :where([aria-invalid]) {
+    --a11y-invalid: 0;
+  }
+
+  :where([aria-invalid="true"]) {
+    --a11y-invalid: 1;
+    outline-color: var(--color-danger, #dc2626);
+  }
+
+  :where([aria-disabled="true"]) {
+    cursor: not-allowed;
+    opacity: var(--a11y-disabled-opacity);
+    pointer-events: none;
+  }
+}
