@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" data-theme="desktop-light" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Switch | Topcoat Gallery</title>
+    <link rel="stylesheet" href="../demo/fonts/stylesheet.css">
+    <link rel="stylesheet" data-test="theme-stylesheet" href="../css/topcoat-desktop-light.css">
+    <link rel="stylesheet" href="./shared.css">
+  </head>
+  <body>
+    <main class="gallery" data-test="component-page" data-test-component="switch">
+      <header>
+        <h1>Switch</h1>
+        <p class="notes">Switch toggle states.</p>
+      </header>
+      <section class="example stack" data-test="component">
+        <label class="topcoat-switch" data-test="switch-off">
+          <input type="checkbox" class="topcoat-switch__input">
+          <div class="topcoat-switch__toggle"></div>
+        </label>
+        <label class="topcoat-switch" data-test="switch-on">
+          <input type="checkbox" class="topcoat-switch__input" checked>
+          <div class="topcoat-switch__toggle"></div>
+        </label>
+        <label class="topcoat-switch" data-test="switch-disabled">
+          <input type="checkbox" class="topcoat-switch__input" disabled>
+          <div class="topcoat-switch__toggle"></div>
+        </label>
+      </section>
+    </main>
+    <script src="./shared.js"></script>
+  </body>
+</html>

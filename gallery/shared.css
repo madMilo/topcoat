@@ -1,0 +1,78 @@
+:root {
+  color-scheme: light dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  background: #f5f5f5;
+  color: #1c1c1c;
+}
+
+body[data-theme*="dark"] {
+  background: #1f1f1f;
+  color: #f5f5f5;
+}
+
+.gallery {
+  padding: 32px;
+  display: grid;
+  gap: 24px;
+}
+
+.gallery header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gallery h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.gallery .example {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body[data-theme*="dark"] .gallery .example {
+  background: rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.gallery .stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gallery .spacer {
+  height: 16px;
+}
+
+.gallery .notes {
+  font-size: 14px;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.gallery a {
+  color: inherit;
+}
+
+.gallery .link-list {
+  display: grid;
+  gap: 8px;
+  padding-left: 18px;
+}

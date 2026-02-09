@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" data-theme="desktop-light" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Large Text Input | Topcoat Gallery</title>
+    <link rel="stylesheet" href="../demo/fonts/stylesheet.css">
+    <link rel="stylesheet" data-test="theme-stylesheet" href="../css/topcoat-desktop-light.css">
+    <link rel="stylesheet" href="./shared.css">
+  </head>
+  <body>
+    <main class="gallery" data-test="component-page" data-test-component="text-input-large">
+      <header>
+        <h1>Large Text Input</h1>
+        <p class="notes">Large text input variations.</p>
+      </header>
+      <section class="example stack" data-test="component">
+        <input type="text" class="topcoat-text-input--large" placeholder="text" data-test="text-input-large">
+        <input type="text" class="topcoat-text-input--large" placeholder="text" data-test="text-input-large-disabled" disabled>
+        <input type="text" class="topcoat-text-input--large" placeholder="text" value="fail" pattern="not-fail" data-test="text-input-large-invalid">
+      </section>
+    </main>
+    <script src="./shared.js"></script>
+  </body>
+</html>
