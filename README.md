@@ -62,6 +62,13 @@ For the details see our [Engineering Practices](https://github.com/topcoat/topco
 
 For performance tests, see [dev/test/perf/telemetry/](https://github.com/topcoat/topcoat/tree/master/dev/test/perf/telemetry).
 
+#### Visual regression gallery
+
+Static gallery pages live under `gallery/` and can be opened directly in the browser. Use the Playwright suite to capture component screenshots across themes, directions, and viewports:
+
+* Run snapshots: `npm run test:visual`
+* Update snapshots: `npm run test:visual:update`
+
 ### Building
 
 Topcoat uses [Grunt](http://gruntjs.com/) to build

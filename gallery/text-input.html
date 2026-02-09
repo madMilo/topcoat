@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" data-theme="desktop-light" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Text Input | Topcoat Gallery</title>
+    <link rel="stylesheet" href="../demo/fonts/stylesheet.css">
+    <link rel="stylesheet" data-test="theme-stylesheet" href="../css/topcoat-desktop-light.css">
+    <link rel="stylesheet" href="./shared.css">
+  </head>
+  <body>
+    <main class="gallery" data-test="component-page" data-test-component="text-input">
+      <header>
+        <h1>Text Input</h1>
+        <p class="notes">Text input variations.</p>
+      </header>
+      <section class="example stack" data-test="component">
+        <input type="text" class="topcoat-text-input" placeholder="text" data-test="text-input">
+        <input type="text" class="topcoat-text-input" placeholder="text" data-test="text-input-disabled" disabled>
+        <input type="text" class="topcoat-text-input" placeholder="text" value="fail" pattern="not-fail" data-test="text-input-invalid">
+      </section>
+    </main>
+    <script src="./shared.js"></script>
+  </body>
+</html>
