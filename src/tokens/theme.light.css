@@ -1,0 +1,8 @@
+@import "./foundation.css";
+@import "./semantic.light.css";
+
+@layer tokens {
+  :root[data-theme="light"] {
+    color-scheme: light;
+  }
+}

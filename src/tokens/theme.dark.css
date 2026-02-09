@@ -1,0 +1,8 @@
+@import "./foundation.css";
+@import "./semantic.dark.css";
+
+@layer tokens {
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+  }
+}

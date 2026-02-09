@@ -1,0 +1,14 @@
+@layer tokens {
+  :root[data-theme="dark"] {
+    --color-bg: var(--color-neutral-800);
+    --color-surface: var(--color-neutral-700);
+    --color-surface-muted: var(--color-neutral-900);
+    --color-text: var(--color-neutral-0);
+    --color-text-muted: var(--color-neutral-200);
+    --color-border: var(--color-neutral-900);
+    --color-accent: var(--color-brand-500);
+    --color-accent-hover: var(--color-brand-600);
+    --color-accent-contrast: var(--color-neutral-0);
+    --color-danger: var(--color-danger-500);
+  }
+}

@@ -18,3 +18,14 @@ The legacy production stylesheets remain in `css/` and are the current source of
 - `css/topcoat-mobile-light.css` and `css/topcoat-mobile-dark.css`
 
 The new `src/` tree is intended to eventually compile into those same outputs (and their minified variants) once parity is achieved. Until then, the legacy `css/` files are left untouched to avoid regressions; changes should only land in `src/` until a full migration plan is complete.
+
+## Theme compatibility mapping
+
+While the token system evolves, use the new theme entrypoints for future builds and keep the current light/dark bundles as compatibility artifacts:
+
+| New token entrypoint | Intended legacy output (compatibility) |
+| --- | --- |
+| `src/tokens/theme.light.css` | `css/topcoat-desktop-light.css`, `css/topcoat-mobile-light.css` |
+| `src/tokens/theme.dark.css` | `css/topcoat-desktop-dark.css`, `css/topcoat-mobile-dark.css` |
+
+The legacy outputs should continue to be produced (or retained) until the new theme model stabilizes and all component styles are migrated.
