@@ -1,0 +1,16 @@
+@layer tokens {
+  :root {
+    color-scheme: light dark;
+    --color-neutral-0: #ffffff;
+    --color-neutral-50: #f6f7f8;
+    --color-neutral-100: #e6e8e9;
+    --color-neutral-200: #c6c8c8;
+    --color-neutral-600: #737373;
+    --color-neutral-700: #595b5b;
+    --color-neutral-800: #454646;
+    --color-neutral-900: #333434;
+    --color-brand-500: #288edf;
+    --color-brand-600: #1e7dc8;
+    --color-danger-500: #ec514e;
+  }
+}

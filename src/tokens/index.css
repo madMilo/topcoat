@@ -1,3 +1,7 @@
+@import "./foundation.css";
+@import "./semantic.light.css";
+@import "./semantic.dark.css";
+
 @layer tokens {
-  /* Token definitions will live here. */
+  /* Combined tokens entrypoint for all themes. */
 }
